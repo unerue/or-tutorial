@@ -1,0 +1,122 @@
+
+Gurobi 8.1.1 (mac64, Python) logging started Mon Aug 19 22:56:09 2019
+
+Optimize a model with 3 rows, 2 columns and 6 nonzeros
+Coefficient statistics:
+  Matrix range     [2e+00, 1e+01]
+  Objective range  [2e+00, 3e+00]
+  Bounds range     [0e+00, 0e+00]
+  RHS range        [2e+02, 3e+02]
+Presolve time: 0.01s
+Presolved: 3 rows, 2 columns, 6 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    5.0000000e+30   4.875000e+30   5.000000e+00      0s
+       2    1.0000000e+02   0.000000e+00   0.000000e+00      0s
+
+Solved in 2 iterations and 0.02 seconds
+Optimal objective  1.000000000e+02
+Optimize a model with 3 rows, 2 columns and 6 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+00]
+  Objective range  [2e+02, 3e+02]
+  Bounds range     [0e+00, 0e+00]
+  RHS range        [2e+01, 4e+01]
+Presolve time: 0.00s
+Presolved: 3 rows, 2 columns, 6 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    0.0000000e+00   3.625000e+01   0.000000e+00      0s
+       2    4.5000000e+03   0.000000e+00   0.000000e+00      0s
+
+Solved in 2 iterations and 0.01 seconds
+Optimal objective  4.500000000e+03
+Optimize a model with 7 rows, 12 columns and 24 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [1e+00, 5e+00]
+  Bounds range     [0e+00, 0e+00]
+  RHS range        [1e+02, 2e+02]
+Presolve time: 0.00s
+Presolved: 7 rows, 12 columns, 24 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.0500000e+03   3.000000e+02   0.000000e+00      0s
+       2    1.2000000e+03   0.000000e+00   0.000000e+00      0s
+
+Solved in 2 iterations and 0.01 seconds
+Optimal objective  1.200000000e+03
+Optimize a model with 5 rows, 2 columns and 9 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+01]
+  Objective range  [2e+00, 3e+00]
+  Bounds range     [0e+00, 0e+00]
+  RHS range        [2e+01, 3e+02]
+Presolve removed 5 rows and 2 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    9.6000000e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 0 iterations and 0.01 seconds
+Optimal objective  9.600000000e+01
+Optimize a model with 20 rows, 18 columns and 51 nonzeros
+Coefficient statistics:
+  Matrix range     [4e-02, 1e+00]
+  Objective range  [1e-01, 4e+01]
+  Bounds range     [0e+00, 0e+00]
+  RHS range        [3e+02, 5e+03]
+Presolve removed 13 rows and 8 columns
+Presolve time: 0.01s
+Presolved: 7 rows, 10 columns, 23 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    3.1097500e+05   1.625000e+03   0.000000e+00      0s
+       5    4.0132500e+05   0.000000e+00   0.000000e+00      0s
+
+Solved in 5 iterations and 0.01 seconds
+Optimal objective  4.013250000e+05
+Optimize a model with 5 rows, 2 columns and 9 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+01]
+  Objective range  [2e+00, 3e+00]
+  Bounds range     [0e+00, 0e+00]
+  RHS range        [2e+01, 3e+02]
+Presolve removed 5 rows and 2 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    9.6000000e+01   0.000000e+00   0.000000e+00      0s
+
+Solved in 0 iterations and 0.01 seconds
+Optimal objective  9.600000000e+01
+
+Gurobi 8.1.1 (mac64, Python) logging started Mon Aug 19 23:14:50 2019
+
+Optimize a model with 85 rows, 25 columns and 225 nonzeros
+Variable types: 0 continuous, 25 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [5e+00, 1e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Found heuristic solution: objective 363.0000000
+Presolve removed 65 rows and 15 columns
+Presolve time: 0.01s
+Presolved: 20 rows, 10 columns, 60 nonzeros
+Variable types: 0 continuous, 10 integer (10 binary)
+
+Root relaxation: objective 1.970000e+02, 0 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0     197.0000000  197.00000  0.00%     -    0s
+
+Explored 0 nodes (0 simplex iterations) in 0.03 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 197 363 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.970000000000e+02, best bound 1.970000000000e+02, gap 0.0000%

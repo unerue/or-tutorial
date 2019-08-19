@@ -4,7 +4,7 @@
   <img height="70" src="https://upload.wikimedia.org/wikipedia/en/a/a7/COIN_OR_LOGO.png" />
 </p>
 
-`or-tutorial` is operations research tutorial.
+`or-tutorial` is an operations research tutorial. I have been studying operations research (OR) so far. I used Excel, Python, and pulp to solve the OR problem. I have too many files and being cleaned up nowadays.
 
 #### Dependencies
 
