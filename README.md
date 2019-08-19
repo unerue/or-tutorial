@@ -2,11 +2,13 @@
 
 <p align="center">
   <img height="70" src="https://upload.wikimedia.org/wikipedia/en/a/a7/COIN_OR_LOGO.png" />
+  <img height="70" src="https://assets.gurobi.com/img/logos/logo.png" />
+  <img height="70" src="https://repository-images.githubusercontent.com/20035587/2559bd00-9a75-11e9-9686-0697d18522cf" />
 </p>
 
 `or-tutorial` is an operations research tutorial. I have been studying operations research (OR) so far. I used Excel, Python, and pulp to solve the OR problem. I have too many files and being cleaned up nowadays.
 
-그 동안 공부해왔던 경영과학, 기계학습 그리고 자연어 처리를 정리해서 올릴 예정입니다. 오래전에 작성했던 파일이라 코딩이 정말 엉망이어서 공개하기 민망하지만 일단 파일을 찾는데로 올리고 정리하고 있습니다. 
+그 동안 공부해왔던 경영과학, 기계학습 그리고 자연어 처리를 정리해서 올릴 예정입니다. 오래전에 작성했던 파일이라 코딩이 정말 엉망이어서 공개하기 민망하지만 일단 파일을 찾는데로 올리고 정리하고 있습니다. 메타휴리스틱도 사용할 겸 파이썬 deap도 정리하고 스크래치까지 정리해보겠습니다.
 
 #### Dependencies
 
