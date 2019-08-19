@@ -50,4 +50,4 @@
   - Jupyter - []()
 
 - 5.3. **Job-Shop Scheduling**
-  - Jupyter - [job-shop.ipynb]()
+  - Jupyter - [job-shop.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/scheduling/job-shop.ipynb)
