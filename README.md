@@ -28,7 +28,7 @@
 
 * [linear-programming.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/linear-programming.ipynb)
 
-#### 1.2 Transportation**
+#### 1.2 Transportation
 * [transportation.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/transportation.ipynb)
 
 
@@ -38,15 +38,16 @@
 
 * [integer-programming.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/integer-programming.ipynb)
 
-#### 2.2 Traveling Salesman Problem**
+#### 2.2 Traveling Salesman Problem
 
 * [traveling-salesman.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/traveling-salesman.ipynb)
 
-#### 2.3 Vehicle Routing Problem**
+#### 2.3 Vehicle Routing Problem
 
 * [vehicle-routing.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/vehicle-routing.ipynb)
 
-#### 2.4 Knapsack Problem**
+#### 2.4 Knapsack Problem
+
 * [knapsack.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/knapsack.ipynb)
 
 #### 3. Quadartic Programming
@@ -55,11 +56,11 @@
 
 ### 1. Single Machine
 
-* []()
+* [single-machine.ipynb]()
 
 ### 2 Flow-Shop Scheduling
 
-* []()
+* [flow-shop.ipynb]()
 
 ### 3 Job-Shop Scheduling**
 
