@@ -20,22 +20,34 @@
 
 ### Linear Programming
 
+- 1.1 **Product Mix**
+  - Jupyter - []()
+
 ### Advanced Linear Programming
 
 ### Integer Programming
 
-- 2.1. [Traveling Salesman Problem]()
+- 2.1. **Traveling Salesman Problem**
   - Jupyter - [traveling-salesman.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/traveling-salesman.ipynb)
   - References - []()
 
-- 2.2. [Vehicle Routing Problem]()
+- 2.2. **Vehicle Routing Problem**
   - Jupyter - [vehicle-routing.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/vehicle-routing.ipynb)
   - References - []()
 
-- 2.3. [0-1 Knapsack Problem]()
+- 2.3. **0-1 Knapsack Problem**
   - Jupyter - []()
   - References - []()
 
 ### Quadartic Programming
 
-### Dynamic Programming
+### Scheduling
+
+- 5.1. **Single Machine**
+  - Jupyter - []()
+
+- 5.2. **Flow-Shop Scheduling**
+  - Jupyter - []()
+
+- 5.3. **Job-Shop Scheduling**
+  - Jupyter - [job-shop.ipynb]()
