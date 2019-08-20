@@ -1,4 +1,4 @@
-<img alt="Python37" src="https://img.shields.io/badge/Python-3.7-blue.svg" /> <img alt="EXCEL2016" src="https://img.shields.io/badge/EXCEL-2016-seagreen.svg" /> <img alt="Version" src="https://img.shields.io/badge/Version-0.1b-yellow.svg" /> <img alt="Kyungsu" src="https://img.shields.io/badge/Created%20by-Kyungsu-orange.svg" />
+<img alt="Python37" src="https://img.shields.io/badge/Python-3.7-blue.svg" /> <img alt="EXCEL2016" src="https://img.shields.io/badge/EXCEL-2016-seagreen.svg" /> <img alt="Version" src="https://img.shields.io/badge/Version-0.1b-yellow.svg" /> <img alt="Kyungsu" src="https://img.shields.io/badge/Created%20by-Kyungsu-orange.svg?style=flat&colorA=E1523D&colorB=blue" />
 
 # or-tutorial
 
