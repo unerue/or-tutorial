@@ -22,38 +22,48 @@
 * PuLP (>= 1.6.9)
 * gurobi (>= 8.1)
 
-## Operations Research Tutorial with Python
+## Operations Research Tutorial
 
-## 선형계획법<br>Linear Programming
+### 1. 선형계획법 (Linear Programming)
 
-1. **제품 혼합 문제 (Product Mix)** - [linear-programming.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/linear-programming.ipynb)
-2. **수송문제 (Transportation)** - [transportation.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/transportation.ipynb)
+#### 1.1 Product Mix
 
----
+* [linear-programming.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/linear-programming.ipynb)
 
-## 정수계획법<br>Integer Programming
+#### 1.2 수송문제 (Transportation)
+* [transportation.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/transportation.ipynb)
 
-1. **정수계획법 (Integer Programming)** - [integer-programming.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/integer-programming.ipynb)
-2. **순환판매원문제 (Traveling Salesman Problem)** - [traveling-salesman.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/traveling-salesman.ipynb)
-3. **차량 경로 문제 (Vehicle Routing Problem)** - [vehicle-routing.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/vehicle-routing.ipynb)
-4. **배낭 문제 (Knapsack Problem)** - [knapsack.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/knapsack.ipynb)
 
-## Quadartic Programming
+### 2. 정수계획법 (Integer Programming)
 
----
+#### 2.1 Integer Programming
 
-## Dynamic Programming
+* [integer-programming.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/integer-programming.ipynb)
 
----
+#### 2.2 순환판매원문제 (Traveling Salesman Problem)
 
-## 일정계획<br>Scheduling
+* [traveling-salesman.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/traveling-salesman.ipynb)
 
-1. **단일 기계 (Single Machine)** - [single-machine.ipynb]()
-2. **흐름 일정계획 (Flow-Shop Scheduling)** - [flow-shop.ipynb]()
-3. **개별 작업장 일정계획 (Job-Shop Scheduling)** - [job-shop.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/scheduling/job-shop.ipynb)
+#### 2.3 차량 경로 문제 (Vehicle Routing Problem)
 
----
+* [vehicle-routing.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/vehicle-routing.ipynb)
 
-## 재고관리<br>Inventory Management
+#### 2.4 배낭 문제 (Knapsack Problem)
 
-1. 신문판매원 문제 (Newvendor) - []()
+* [knapsack.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/knapsack.ipynb)
+
+#### 3. Quadartic Programming
+
+## 일정계획 (Scheduling)
+
+### 1. 단일 기계 (Single Machine)
+
+* [single-machine.ipynb]()
+
+### 2 흐름 일정계획 (Flow-Shop Scheduling)
+
+* [flow-shop.ipynb]()
+
+### 3 Job-Shop Scheduling**
+
+* [job-shop.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/scheduling/job-shop.ipynb)
