@@ -20,7 +20,7 @@
 * pandas (>= 0.24.2)
 * NumPy (>= 1.11.0)
 * PuLP (>= 1.6.9)
-* gurobi (>= 8.1)
+* GUROBI (>= 8.1)
 
 ## Operations Research Tutorial with Python
 
