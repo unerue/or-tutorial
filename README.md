@@ -24,29 +24,29 @@
 
 ## Operations Research Tutorial with Python
 
-## 선형계획법<br>Linear Programming
+### 선형계획법<br>Linear Programming
 
 1. **제품 혼합 문제 (Product Mix)** - [linear-programming.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/linear-programming.ipynb)
 2. **수송문제 (Transportation)** - [transportation.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/transportation.ipynb)
 
 ---
 
-## 정수계획법<br>Integer Programming
+### 정수계획법<br>Integer Programming
 
 1. **정수계획법 (Integer Programming)** - [integer-programming.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/integer-programming.ipynb)
 2. **순환판매원문제 (Traveling Salesman Problem)** - [traveling-salesman.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/traveling-salesman.ipynb)
 3. **차량 경로 문제 (Vehicle Routing Problem)** - [vehicle-routing.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/vehicle-routing.ipynb)
 4. **배낭 문제 (Knapsack Problem)** - [knapsack.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/knapsack.ipynb)
 
-## Quadartic Programming
+### Quadartic Programming
 
 ---
 
-## Dynamic Programming
+### Dynamic Programming
 
 ---
 
-## 일정계획<br>Scheduling
+### 일정계획<br>Scheduling
 
 1. **단일 기계 (Single Machine)** - [single-machine.ipynb]()
 2. **흐름 일정계획 (Flow-Shop Scheduling)** - [flow-shop.ipynb]()
@@ -54,6 +54,6 @@
 
 ---
 
-## 재고관리<br>Inventory Management
+### 재고관리<br>Inventory Management
 
 1. 신문판매원 문제 (Newvendor) - []()
