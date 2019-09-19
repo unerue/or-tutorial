@@ -2,6 +2,8 @@
 
 # or-tutorial
 
+## Please do not refer to this code until Oct. 2019.
+
 <p align="center">
   <img height="70" src="https://upload.wikimedia.org/wikipedia/en/a/a7/COIN_OR_LOGO.png" />
   <img height="70" src="https://assets.gurobi.com/img/logos/logo.png" />
