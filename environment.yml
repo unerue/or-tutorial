@@ -1,0 +1,10 @@
+name: optimization
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.7.4
+  - pulp=1.6
+  - gurobi=8.1
+  - deap=1.3
+ 
