@@ -1,0 +1,7 @@
+numpy==1.16.5
+pandas==0.25.1
+gurobi==8.1.1
+pulp==1.6.1
+deap==1.3
+  
+ 

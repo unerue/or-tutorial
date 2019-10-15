@@ -8,7 +8,7 @@
   <img height="70" src="https://repository-images.githubusercontent.com/20035587/2559bd00-9a75-11e9-9686-0697d18522cf" />
 </p>
 
-`or-tutorial`는 경영과학(OR/MS) 튜토리얼입니다. 박사과정 동안 공부해왔던 경영과학, 머신러닝 그리고 자연어 처리를 정리해서 올릴 예정입니다. 제일 먼저 저에게 가장 재미있었던 경영과학을 정리해서 올리겠습니다. 오래전에 작성했던거라 코딩이 엉망이어서 리팩토링하고 있습니다. 
+`or-tutorial`는 경영과학(OR/MS) 튜토리얼입니다. 
 
 `or-tutorial` is an operations research tutorial. 
 
@@ -60,7 +60,7 @@
 1. **최단경로문제 (Shortest Path Problem)** - []()
 2. **최소걸침나무문제 (Minimum Spanning Tree Problem)** -[]()
 3. **최대흐름문제 (Maximum Flow Problem)** - []()
-4. **최소비용흐름문제 (Minimum Cost Flow Problem)** []()
+4. **최소비용흐름문제 (Minimum Cost Flow Problem)** - []()
 
 ---
 
@@ -87,6 +87,9 @@
 ## 재고관리<br>Inventory Management
 
 1. **신문판매원 문제 (Newvendor)** - []()
+2. **경제적 주문량 (Economic Order Quantity, EOQ)** - []()
+3. **로트 크기 결정 (Lot-Sizing Problem)** - []()
+4. **일괄구매 모형 (Joint Replenishment Problem, JRP)** - []()
 
 ---
 
