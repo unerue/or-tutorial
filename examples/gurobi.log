@@ -354,3 +354,221 @@ Iteration    Objective       Primal Inf.    Dual Inf.      Time
 
 Solved in 0 iterations and 0.01 seconds
 Optimal objective  1.760000000e+04
+
+Gurobi 8.1.1 (win64, Python) logging started 10/15/19 22:46:39
+
+
+--------------------------------------------
+Warning: your license will expire in 1 days
+--------------------------------------------
+
+Optimize a model with 7 rows, 12 columns and 24 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [2e+00, 9e+00]
+  Bounds range     [0e+00, 0e+00]
+  RHS range        [6e+01, 2e+02]
+Presolve time: 0.00s
+Presolved: 7 rows, 12 columns, 24 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.8400000e+03   4.000000e+02   0.000000e+00      0s
+       3    2.1300000e+03   0.000000e+00   0.000000e+00      0s
+
+Solved in 3 iterations and 0.01 seconds
+Optimal objective  2.130000000e+03
+Optimize a model with 7 rows, 12 columns and 24 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [2e+00, 9e+00]
+  Bounds range     [0e+00, 0e+00]
+  RHS range        [6e+01, 2e+02]
+Presolve time: 0.00s
+Presolved: 7 rows, 12 columns, 24 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.8400000e+03   4.000000e+02   0.000000e+00      0s
+       3    2.1300000e+03   0.000000e+00   0.000000e+00      0s
+
+Solved in 3 iterations and 0.01 seconds
+Optimal objective  2.130000000e+03
+Optimize a model with 7 rows, 12 columns and 24 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [2e+00, 9e+00]
+  Bounds range     [0e+00, 0e+00]
+  RHS range        [6e+01, 2e+02]
+Presolve time: 0.00s
+Presolved: 7 rows, 12 columns, 24 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.8400000e+03   4.000000e+02   0.000000e+00      0s
+       3    2.1300000e+03   0.000000e+00   0.000000e+00      0s
+
+Solved in 3 iterations and 0.00 seconds
+Optimal objective  2.130000000e+03
+Optimize a model with 7 rows, 12 columns and 24 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [2e+00, 9e+00]
+  Bounds range     [0e+00, 0e+00]
+  RHS range        [6e+01, 2e+02]
+Presolve time: 0.00s
+Presolved: 7 rows, 12 columns, 24 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.8400000e+03   4.000000e+02   0.000000e+00      0s
+       3    2.1300000e+03   0.000000e+00   0.000000e+00      0s
+
+Solved in 3 iterations and 0.01 seconds
+Optimal objective  2.130000000e+03
+Optimize a model with 7 rows, 12 columns and 24 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [2e+00, 9e+00]
+  Bounds range     [0e+00, 0e+00]
+  RHS range        [6e+01, 2e+02]
+Presolve time: 0.00s
+Presolved: 7 rows, 12 columns, 24 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.8400000e+03   4.000000e+02   0.000000e+00      0s
+       3    2.1300000e+03   0.000000e+00   0.000000e+00      0s
+
+Solved in 3 iterations and 0.01 seconds
+Optimal objective  2.130000000e+03
+Optimize a model with 7 rows, 12 columns and 24 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [2e+00, 9e+00]
+  Bounds range     [0e+00, 0e+00]
+  RHS range        [6e+01, 2e+02]
+Presolve time: 0.00s
+Presolved: 7 rows, 12 columns, 24 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.8400000e+03   4.000000e+02   0.000000e+00      0s
+       3    2.1300000e+03   0.000000e+00   0.000000e+00      0s
+
+Solved in 3 iterations and 0.01 seconds
+Optimal objective  2.130000000e+03
+Optimize a model with 7 rows, 12 columns and 24 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [2e+00, 9e+00]
+  Bounds range     [0e+00, 0e+00]
+  RHS range        [6e+01, 2e+02]
+Presolve time: 0.00s
+Presolved: 7 rows, 12 columns, 24 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.8400000e+03   4.000000e+02   0.000000e+00      0s
+       3    2.1300000e+03   0.000000e+00   0.000000e+00      0s
+
+Solved in 3 iterations and 0.01 seconds
+Optimal objective  2.130000000e+03
+Optimize a model with 7 rows, 12 columns and 24 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [2e+00, 9e+00]
+  Bounds range     [0e+00, 0e+00]
+  RHS range        [6e+01, 2e+02]
+Presolve time: 0.00s
+Presolved: 7 rows, 12 columns, 24 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.8400000e+03   4.000000e+02   0.000000e+00      0s
+       3    2.1300000e+03   0.000000e+00   0.000000e+00      0s
+
+Solved in 3 iterations and 0.01 seconds
+Optimal objective  2.130000000e+03
+Optimize a model with 7 rows, 12 columns and 24 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [2e+00, 9e+00]
+  Bounds range     [0e+00, 0e+00]
+  RHS range        [6e+01, 2e+02]
+Presolve time: 0.00s
+Presolved: 7 rows, 12 columns, 24 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.8400000e+03   4.000000e+02   0.000000e+00      0s
+       3    2.1300000e+03   0.000000e+00   0.000000e+00      0s
+
+Solved in 3 iterations and 0.01 seconds
+Optimal objective  2.130000000e+03
+Optimize a model with 7 rows, 12 columns and 24 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [2e+00, 9e+00]
+  Bounds range     [0e+00, 0e+00]
+  RHS range        [6e+01, 2e+02]
+Presolve time: 0.00s
+Presolved: 7 rows, 12 columns, 24 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.8400000e+03   4.000000e+02   0.000000e+00      0s
+       3    2.1300000e+03   0.000000e+00   0.000000e+00      0s
+
+Solved in 3 iterations and 0.01 seconds
+Optimal objective  2.130000000e+03
+
+Gurobi 8.1.1 (win64, Python) logging started 10/15/19 23:01:36
+
+
+--------------------------------------------
+Warning: your license will expire in 1 days
+--------------------------------------------
+
+Optimize a model with 7 rows, 12 columns and 24 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [2e+00, 9e+00]
+  Bounds range     [0e+00, 0e+00]
+  RHS range        [6e+01, 2e+02]
+Presolve time: 0.00s
+Presolved: 7 rows, 12 columns, 24 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.8400000e+03   4.000000e+02   0.000000e+00      0s
+       3    2.1300000e+03   0.000000e+00   0.000000e+00      0s
+
+Solved in 3 iterations and 0.01 seconds
+Optimal objective  2.130000000e+03
+
+Gurobi 8.1.1 (win64, Python) logging started 10/15/19 23:10:19
+
+
+--------------------------------------------
+Warning: your license will expire in 1 days
+--------------------------------------------
+
+Optimize a model with 7 rows, 12 columns and 24 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [2e+00, 9e+00]
+  Bounds range     [0e+00, 0e+00]
+  RHS range        [6e+01, 2e+02]
+Presolve time: 0.00s
+Presolved: 7 rows, 12 columns, 24 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    2.0400000e+03   4.500000e+02   0.000000e+00      0s
+
+Solved in 2 iterations and 0.01 seconds
+Infeasible model
+Optimize a model with 7 rows, 12 columns and 24 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [2e+00, 9e+00]
+  Bounds range     [0e+00, 0e+00]
+  RHS range        [6e+01, 2e+02]
+Presolve time: 0.00s
+Presolved: 7 rows, 12 columns, 24 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.7800000e+03   1.700000e+02   0.000000e+00      0s
+       4    2.0300000e+03   0.000000e+00   0.000000e+00      0s
+
+Solved in 4 iterations and 0.01 seconds
+Optimal objective  2.030000000e+03

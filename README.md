@@ -2,15 +2,13 @@
 
 # or-tutorial
 
-## Please do not refer to this code until Oct. 2019.
-
 <p align="center">
   <img height="70" src="https://upload.wikimedia.org/wikipedia/en/a/a7/COIN_OR_LOGO.png" />
   <img height="70" src="https://assets.gurobi.com/img/logos/logo.png" />
   <img height="70" src="https://repository-images.githubusercontent.com/20035587/2559bd00-9a75-11e9-9686-0697d18522cf" />
 </p>
 
-`or-tutorial`는 경영과학(OR/MS) 강좌입니다. 박사과정 동안 공부해왔던 경영과학, 기계학습 그리고 자연어 처리를 정리해서 올릴 예정입니다. 제일 먼저 저에게 가장 재미있고 흥미로웠던 경영과학을 정리해서 올리겠습니다. 오래전에 작성했던 파일이라 코딩이 정말 엉망이어서 공개하기 민망하지만 일단 파일을 찾는데로 올리고 정리하고 있습니다. 메타휴리스틱도 사용할 겸 파이썬 deap도 정리하고 스크래치까지 다루겠습니다.
+`or-tutorial`는 경영과학(OR/MS) 튜토리얼입니다. 박사과정 동안 공부해왔던 경영과학, 머신러닝 그리고 자연어 처리를 정리해서 올릴 예정입니다. 제일 먼저 저에게 가장 재미있었던 경영과학을 정리해서 올리겠습니다. 오래전에 작성했던거라 코딩이 엉망이어서 리팩토링하고 있습니다. 
 
 `or-tutorial` is an operations research tutorial. 
 
@@ -18,18 +16,19 @@
 
 `or-tutorial` requires:
 
-* Python (>= 3.7)
-* pandas (>= 0.24.2)
-* NumPy (>= 1.11.0)
+* Python (>= 3.7.4)
+* NumPy (>= 1.16.5)
+* pandas (>= 0.25.1)
 * PuLP (>= 1.6.9)
-* GUROBI (>= 8.1)
+* GUROBI (>= 8.1.1)
+* DEAP (>= 1.3.1)
 
 # Operations Research Tutorial with Python
 
 ## 선형계획법<br>Linear Programming
 
 1. **제품조합문제 (Product Mix Problem)** - [product-mix.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/product-mix.ipynb)
-2. **제품조합문제와 민감도 분석 (Product Mix Problem and Sensitivity Analysis)** - [product-mix-sensitivity-analysis.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/product-mix-sensitivity-analysis.ipynb)
+2. **민감도 분석 (Sensitivity Analysis)** - [sensitivity-analysis.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/sensitivity-analysis.ipynb)
 3. **교대근무 계획문제 (Workforce Scheduling)** - [workforce-scheduling.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/workforce-scheduling.ipynb)
 4. **수송문제 (Transportation Problem)** - [transportation.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/transportation.ipynb)
 5. **불균형 수송문제 (Transportation Problem)** - [unbalanced-transportation.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/unbalanced-transportation.ipynb)
