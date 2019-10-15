@@ -28,10 +28,11 @@
 
 ## 선형계획법<br>Linear Programming
 
-1. **제품 혼합 문제 (Product Mix Problem)** - [product-mix.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/product-mix.ipynb)
-2. **제품 혼합 문제와 민감도 분석 (Product Mix Problem and Sensitivity Analysis)** - [product-mix-sensitivity-analysis.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/product-mix-sensitivity-analysis.ipynb)
+1. **제품조합문제 (Product Mix Problem)** - [product-mix.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/product-mix.ipynb)
+2. **제품조합문제와 민감도 분석 (Product Mix Problem and Sensitivity Analysis)** - [product-mix-sensitivity-analysis.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/product-mix-sensitivity-analysis.ipynb)
 3. **교대근무 계획문제 (Workforce Scheduling)** - [workforce-scheduling.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/workforce-scheduling.ipynb)
 4. **수송문제 (Transportation Problem)** - [transportation.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/transportation.ipynb)
+5. **불균형 수송문제 (Transportation Problem)** - [unbalanced-transportation.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/unbalanced-transportation.ipynb)
 
 ---
 
