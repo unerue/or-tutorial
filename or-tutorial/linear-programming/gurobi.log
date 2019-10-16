@@ -824,3 +824,111 @@ Gurobi 8.1.1 (win64, Python) logging started 10/16/19 11:33:18
 
 Gurobi 8.1.1 (win64, Python) logging started 10/16/19 11:33:32
 
+
+Gurobi 8.1.1 (win64, Python) logging started 10/16/19 12:11:55
+
+
+Gurobi 8.1.1 (win64, Python) logging started 10/16/19 12:26:26
+
+Optimize a model with 3 rows, 2 columns and 6 nonzeros
+Coefficient statistics:
+  Matrix range     [2e+00, 1e+01]
+  Objective range  [2e+00, 3e+00]
+  Bounds range     [0e+00, 0e+00]
+  RHS range        [2e+02, 3e+02]
+Presolve time: 0.00s
+Presolved: 3 rows, 2 columns, 6 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    5.0000000e+30   4.875000e+30   5.000000e+00      0s
+       2    1.0000000e+02   0.000000e+00   0.000000e+00      0s
+
+Solved in 2 iterations and 0.00 seconds
+Optimal objective  1.000000000e+02
+Optimize a model with 3 rows, 2 columns and 6 nonzeros
+Coefficient statistics:
+  Matrix range     [2e+00, 1e+01]
+  Objective range  [2e+00, 3e+00]
+  Bounds range     [0e+00, 0e+00]
+  RHS range        [2e+02, 3e+02]
+Presolve time: 0.00s
+Presolved: 3 rows, 2 columns, 6 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    5.0000000e+30   4.875000e+30   5.000000e+00      0s
+       2    1.0000000e+02   0.000000e+00   0.000000e+00      0s
+
+Solved in 2 iterations and 0.01 seconds
+Optimal objective  1.000000000e+02
+
+Gurobi 8.1.1 (win64, Python) logging started 10/16/19 12:31:06
+
+Optimize a model with 3 rows, 2 columns and 6 nonzeros
+Coefficient statistics:
+  Matrix range     [2e+00, 1e+01]
+  Objective range  [2e+00, 3e+00]
+  Bounds range     [0e+00, 0e+00]
+  RHS range        [2e+02, 3e+02]
+Presolve time: 0.00s
+Presolved: 3 rows, 2 columns, 6 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    5.0000000e+30   4.875000e+30   5.000000e+00      0s
+       2    1.0000000e+02   0.000000e+00   0.000000e+00      0s
+
+Solved in 2 iterations and 0.01 seconds
+Optimal objective  1.000000000e+02
+
+Gurobi 8.1.1 (win64, Python) logging started 10/16/19 12:32:43
+
+
+Gurobi 8.1.1 (win64, Python) logging started 10/16/19 12:32:58
+
+
+Gurobi 8.1.1 (win64, Python) logging started 10/16/19 12:33:16
+
+Optimize a model with 3 rows, 2 columns and 6 nonzeros
+Coefficient statistics:
+  Matrix range     [2e+00, 1e+01]
+  Objective range  [2e+00, 3e+00]
+  Bounds range     [0e+00, 0e+00]
+  RHS range        [2e+02, 3e+02]
+Presolve time: 0.00s
+Presolved: 3 rows, 2 columns, 6 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    5.0000000e+30   4.875000e+30   5.000000e+00      0s
+       2    1.0000000e+02   0.000000e+00   0.000000e+00      0s
+
+Solved in 2 iterations and 0.01 seconds
+Optimal objective  1.000000000e+02
+
+Gurobi 8.1.1 (win64, Python) logging started 10/16/19 12:34:38
+
+Optimize a model with 3 rows, 2 columns and 6 nonzeros
+Coefficient statistics:
+  Matrix range     [2e+00, 1e+01]
+  Objective range  [2e+00, 3e+00]
+  Bounds range     [0e+00, 0e+00]
+  RHS range        [2e+02, 3e+02]
+Presolve time: 0.00s
+Presolved: 3 rows, 2 columns, 6 nonzeros
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    5.0000000e+30   4.875000e+30   5.000000e+00      0s
+       2    1.0000000e+02   0.000000e+00   0.000000e+00      0s
+
+Solved in 2 iterations and 0.01 seconds
+Optimal objective  1.000000000e+02
+
+Gurobi 8.1.1 (win64, Python) logging started 10/16/19 12:36:57
+
+
+Gurobi 8.1.1 (win64, Python) logging started 10/16/19 12:50:57
+
+
+Gurobi 8.1.1 (win64, Python) logging started 10/16/19 12:51:31
+
+
+Gurobi 8.1.1 (win64, Python) logging started 10/16/19 12:56:34
+
