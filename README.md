@@ -27,23 +27,23 @@
 
 ## 선형계획법<br>Linear Programming
 
-1. **제품조합문제 (Product Mix Problem)** - [product-mix.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/product-mix.ipynb)
-2. **민감도 분석 (Sensitivity Analysis)** - [sensitivity-analysis.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/sensitivity-analysis.ipynb)
-3. **교대근무 계획문제 (Workforce Scheduling)** - [workforce-scheduling.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/workforce-scheduling.ipynb)
-4. **수송문제 (Transportation Problem)** - [transportation.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/transportation.ipynb)
-5. **불균형 수송문제 (Transportation Problem)** - [unbalanced-transportation.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/unbalanced-transportation.ipynb)
+1. **제품조합문제 (Product Mix Problem)** - [product-mix.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/or-tlinear-programming/or-tutorial/product-mix.ipynb)
+2. **민감도 분석 (Sensitivity Analysis)** - [sensitivity-analysis.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/or-tutorial/linear-programming/sensitivity-analysis.ipynb)
+3. **교대근무 계획문제 (Workforce Scheduling)** - [workforce-scheduling.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/or-tutorial/linear-programming/workforce.ipynb)
+4. **수송문제 (Transportation Problem)** - [transportation.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/or-tutorial/linear-programming/transportation.ipynb)
+5. **불균형 수송문제 (Transportation Problem)** - [unbalanced-transportation.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/or-tutorial/linear-programming/unbalanced-transportation.ipynb)
 6. **할당문제와 정수계획모형 (Assignment Problem and Integer Programming)** - []()
 
 ---
 
 ## 정수계획법<br>Integer Programming
 
-1. **배낭문제 (Knapsack Problem)** - [knapsack.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/knapsack.ipynb)
-2. **외판원경로문제 (Traveling Salesman Problem)** - [traveling-salesman.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/traveling-salesman.ipynb)
+1. **배낭문제 (Knapsack Problem)** - [knapsack.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/or-tutorial/integer-programming/knapsack.ipynb)
+2. **외판원경로문제 (Traveling Salesman Problem)** - [traveling-salesman.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/or-tutorial/integer-programming/traveling-salesman.ipynb)
 3. **자본예산문제 (Capital Budgeting Problem)** - []()
 4. **집합포함문제 (Set Covering Problem)** - []()
 5. **공장입지 선정문제 (Plant Location Problem)** -[]()
-6. **차량 경로 문제 (Vehicle Routing Problem)** - [vehicle-routing.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/examples/vehicle-routing.ipynb)
+6. **차량 경로 문제 (Vehicle Routing Problem)** - [vehicle-routing.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/or-tutorial/integer-programming/vehicle-routing.ipynb)
 
 ---
 
@@ -97,4 +97,4 @@
 
 1. **단일 기계 (Single Machine)** - [single-machine.ipynb]()
 2. **흐름 일정계획 (Flow-Shop Scheduling)** - [flow-shop.ipynb]()
-3. **개별 작업장 일정계획 (Job-Shop Scheduling)** - [job-shop.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/scheduling/job-shop.ipynb)
+3. **개별 작업장 일정계획 (Job-Shop Scheduling)** - [job-shop.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/or-tutorial/scheduling/job-shop.ipynb)
