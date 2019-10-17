@@ -1,4 +1,4 @@
-<img alt="Python37" src="https://img.shields.io/badge/Python-3.7-blue.svg" /> <img alt="EXCEL2016" src="https://img.shields.io/badge/EXCEL-2016-seagreen.svg" /> <img alt="Version" src="https://img.shields.io/badge/Version-0.1b-yellow.svg" /> <img alt="Kyungsu" src="https://img.shields.io/badge/Created%20by-Kyungsu-orange.svg?style=flat&colorA=E1523D&colorB=blue" />
+<img alt="Python37" src="https://img.shields.io/badge/Python-3.7-blue.svg" /> <img alt="EXCEL2016" src="https://img.shields.io/badge/EXCEL-2016-seagreen.svg" /> <img alt="Version" src="https://img.shields.io/badge/Version-0.2-yellow.svg" /> <img alt="Kyungsu" src="https://img.shields.io/badge/Created%20by-Kyungsu-orange.svg?style=flat&colorA=E1523D&colorB=blue" />
 
 # or-tutorial
 
@@ -8,7 +8,7 @@
   <img height="70" src="https://repository-images.githubusercontent.com/20035587/2559bd00-9a75-11e9-9686-0697d18522cf" />
 </p>
 
-`or-tutorial`는 경영과학(OR/MS) 튜토리얼입니다. 
+`or-tutorial`는 경영과학(OR/MS) 튜토리얼입니다. 코드 정리 중에 있습니다.
 
 `or-tutorial` is an operations research tutorial. 
 
@@ -22,6 +22,7 @@
 * PuLP (>= 1.6.9)
 * GUROBI (>= 8.1.1)
 * DEAP (>= 1.3.1)
+* tabulate (>= 0.8.5)
 
 # Operations Research Tutorial with Python
 
