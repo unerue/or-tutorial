@@ -8,9 +8,9 @@
   <img height="70" src="https://repository-images.githubusercontent.com/20035587/2559bd00-9a75-11e9-9686-0697d18522cf" />
 </p>
 
-`or-tutorial`는 경영과학(OR/MS) 튜토리얼입니다. 코드 정리 중에 있습니다.
+`or-tutorial`는 경영과학(OR/MS) 튜토리얼입니다. 본 강좌의 목적은 수리 모형을 파이썬으로 구현하는데 있습니다. 따라서, 이론적인 내용 및 수리 모형으로 정식화 과정 생략하였습니다. 자세한 내용은 참고한 서적을 참고하시기 바랍니다.
 
-`or-tutorial` is an operations research tutorial. 
+`or-tutorial` is an operations research tutorial. The purpose of this tutorial is to implement mathematical models in Python. So, I omitted the mathematical formulation. For more information, please read the references.
 
 #### Dependencies
 
