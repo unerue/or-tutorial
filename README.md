@@ -31,10 +31,12 @@
 1. **제품조합문제 (Product Mix Problem)** - [product-mix.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/or-tutorial/linear-programming/product-mix.ipynb)
 2. **민감도 분석 (Sensitivity Analysis)** - [sensitivity-analysis.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/or-tutorial/linear-programming/sensitivity-analysis.ipynb)
 3. **생산계획문제 (Production Planning Problem)** - [production-planning.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/or-tutorial/linear-programming/production-planning.ipynb)
-4. **교대근무 계획문제 (Workforce Scheduling)** - [workforce-scheduling.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/or-tutorial/linear-programming/workforce-scheduling.ipynb)
-5. **수송문제 (Transportation Problem)** - [transportation.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/or-tutorial/linear-programming/transportation.ipynb)
-6. **불균형 수송문제 (Transportation Problem)** - [unbalanced-transportation.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/or-tutorial/linear-programming/unbalanced-transportation.ipynb)
-7. **할당문제와 정수계획모형 (Assignment Problem and Integer Programming)** - []()
+4. **포트폴리오 선택문제 (Portfolio Selection Problem)** - [portfolio-selection.ipynb]()
+5. **교대근무 계획문제 (Workforce Scheduling)** - [workforce-scheduling.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/or-tutorial/linear-programming/workforce-scheduling.ipynb)
+6. **수송문제 (Transportation Problem)** - [transportation.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/or-tutorial/linear-programming/transportation.ipynb)
+7. **불균형 수송문제 (Transportation Problem)** - [unbalanced-transportation.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/or-tutorial/linear-programming/unbalanced-transportation.ipynb)
+8. **경유지 수송문제 (Transshipment Problem)** - [transshipment.ipynb]()
+9. **할당문제 (Assignment Problem)** - []()
 
 ---
 
@@ -45,7 +47,8 @@
 3. **자본예산문제 (Capital Budgeting Problem)** - [capital-budgeting.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/or-tutorial/integer-programming/capital-budgeting.ipynb)
 4. **집합포함문제 (Set Covering Problem)** - []()
 5. **공장입지 선정문제 (Plant Location Problem)** -[]()
-6. **차량 경로 문제 (Vehicle Routing Problem)** - [vehicle-routing.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/or-tutorial/integer-programming/vehicle-routing.ipynb)
+6. **차량경로문제 (Vehicle Routing Problem)** - [vehicle-routing.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/or-tutorial/integer-programming/vehicle-routing.ipynb)
+7. **제약식의 종류 (Kind of Constraints)** - []()
 
 ---
 
