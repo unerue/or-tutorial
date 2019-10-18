@@ -42,7 +42,7 @@
 
 1. **배낭문제 (Knapsack Problem)** - [knapsack.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/or-tutorial/integer-programming/knapsack.ipynb)
 2. **외판원경로문제 (Traveling Salesman Problem)** - [traveling-salesman.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/or-tutorial/integer-programming/traveling-salesman.ipynb)
-3. **자본예산문제 (Capital Budgeting Problem)** - []()
+3. **자본예산문제 (Capital Budgeting Problem)** - [capital-budgeting.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/or-tutorial/integer-programming/capital-budgeting.ipynb)
 4. **집합포함문제 (Set Covering Problem)** - []()
 5. **공장입지 선정문제 (Plant Location Problem)** -[]()
 6. **차량 경로 문제 (Vehicle Routing Problem)** - [vehicle-routing.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/or-tutorial/integer-programming/vehicle-routing.ipynb)
