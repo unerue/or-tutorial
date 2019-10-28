@@ -1,8 +1,8 @@
 # Files
 .DS_Store
 .git
-.mps
-.log
+*.mps
+*.log
 
 # Folders
 .ipynb_checkpoints/
