@@ -1,8 +1,10 @@
+# Files
 .DS_Store
 .git
 .mps
 .log
 
+# Folders
 .ipynb_checkpoints/
 ortools/
 scheduling/
