@@ -1,5 +1,12 @@
 .DS_Store
 .git
-.ipynb_checkpoints
 .mps
 .log
+
+.ipynb_checkpoints/
+ortools/
+scheduling/
+queueing/
+pert/
+dynamic-programming/
+examples/

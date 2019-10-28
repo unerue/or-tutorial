@@ -69,29 +69,22 @@
 
 ---
 
-## 비선형계획법<br>Nonlinear Programming
-
----
-
 ## PERT/CPM
 
----
+1. **PERT/CPM** - []()
 
-## 게임이론<br>Game Theory
-
----
-
-## 마아코브연쇄모형<br>Markov Chain Model
-
----
+--- 
 
 ## 대기행렬모형<br>Queueing System
+
+1. **M/M/1** - []()
+2. **M/M/s** - []()
 
 ---
 
 ## 재고관리<br>Inventory Management
 
-1. **신문판매원 문제 (Newvendor)** - []()
+1. **신문판매원 문제 (News Vendor)** - []()
 2. **경제적 주문량 (Economic Order Quantity, EOQ)** - []()
 3. **로트 크기 결정 (Lot-Sizing Problem)** - []()
 4. **일괄구매 모형 (Joint Replenishment Problem, JRP)** - []()
@@ -103,3 +96,18 @@
 1. **단일 기계 (Single Machine)** - [single-machine.ipynb]()
 2. **흐름 일정계획 (Flow-Shop Scheduling)** - [flow-shop.ipynb]()
 3. **개별 작업장 일정계획 (Job-Shop Scheduling)** - [job-shop.ipynb](https://nbviewer.jupyter.org/github/unerue/or-tutorial/blob/master/or-tutorial/scheduling/job-shop.ipynb)
+
+---
+
+## 비선형계획법<br>Nonlinear Programming
+
+---
+
+## 게임이론<br>Game Theory
+
+---
+
+## 마아코브연쇄모형<br>Markov Chain Model
+
+---
+
