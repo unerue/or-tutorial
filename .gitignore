@@ -12,3 +12,4 @@ queueing/
 pert/
 dynamic-programming/
 examples/
+__pycache__/
