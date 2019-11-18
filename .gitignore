@@ -3,6 +3,7 @@
 .git
 *.mps
 *.log
+copy.md
 
 # Folders
 .ipynb_checkpoints/
