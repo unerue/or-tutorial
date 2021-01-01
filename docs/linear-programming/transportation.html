@@ -1,0 +1,758 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transportation Problem &#8212; Operations Research with Python</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Unbalanced Transportation Problem" href="unbalanced-transportation.html" />
+    <link rel="prev" title="Vehicle Routing Problem" href="vehicle-routing.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Operations Research with Python</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Operations Research
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="linear-programming.html">
+   Linear Programming
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="product-mix.html">
+     Product Mix Problem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="production-planning.html">
+     Production Planning Problem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sensitivity-analysis.html">
+     Sensitivity Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="workforce-scheduling.html">
+     Workforce Scheduling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="vehicle-routing.html">
+     Vehicle Routing Problem
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Transportation Problem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="unbalanced-transportation.html">
+     Unbalanced Transportation Problem
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../integer-programming/integer-programming.html">
+   Knapsack Problem
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../integer-programming/capital-budgeting.html">
+     Capital Budgeting Problem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../integer-programming/set-covering.html">
+     Set Covering Problem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../integer-programming/traveling-salesman.html">
+     Travelling Salesman Problem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../integer-programming/knapsack.html">
+     Knapsack Problem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../integer-programming/plant.html">
+     Plant Location Problem
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/docs/linear-programming/transportation.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/linear-programming/transportation.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#optimization-with-pulp">
+   Optimization with PuLP
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#optimization-with-gurobi">
+   Optimization with GUROBI
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unbalanced-transportation-problem">
+   Unbalanced Transportation Problem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Optimization with PuLP
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="transportation-problem">
+<h1>Transportation Problem<a class="headerlink" href="#transportation-problem" title="Permalink to this headline">¶</a></h1>
+<p>수송계획법은 선형게획법의 특수한 형태로서, 일반적으로 목적함수는 비용의 최소화이다. 수송계획 법의 수식형태와 적용변수들은 다음과 같으며, 수요와 공급이 일치할 경우, 제약조건은 등식이나, 수요와 공급이 불일치할 경우, 제약조건은 부등식이 된다.</p>
+<ul class="simple">
+<li><p>목적함수(objective function): <span class="math notranslate nohighlight">\(\min \sum_{i=1}^n\sum_{j=1}^mc_{ij}x_{ij}\)</span></p></li>
+<li><p>제약조건(constraints): <span class="math notranslate nohighlight">\(\sum_{i=1}^nx_{ij}=S_i,\quad\sum_{i=1}^mx_{ij}=D_j\)</span></p></li>
+<li><p>Decision variable: <span class="math notranslate nohighlight">\(x_{ij}\)</span>, 결정변수로서 공급지역 i에서 수요지역 j로 이동하는 물동량으로 기저변수(basic variable)일 경우 물동량 할당이 된다.</p></li>
+</ul>
+<p><strong>이강우 &amp; 김정자. (2012). <em>EXCEL 2010 경영과학</em>. 한경사, 302.</strong></p>
+<p style="text-indent: 1.5em">P전자는 3개의 공장에서 생산된 제품을 4개의 수요지로 수송하고 있다. 공장 1, 2, 3의 공급량은 각각 120, 150, 200개이고 수요지 1, 2, 3, 4의 수요량은 각각 100, 60, 130, 180개이며 각 공장과 각 수요지 사이의 제품 단위당 수송비용은 표와 같다. 여기서 공장 $i(i=1,2,3)$에서 각 수요지로 수송되는 수송량의 합계는 공장 $i$의 공급량과 일치해야 하며 각 공장에서 수요지 $j(j=1,2,3,4)$로 수송되는 수송량은 수요지 $j$의 수요량과 일치해야 한다. P전자의 총 수송비용을 최소로 하는 각 공장에서 각 수요지로의 최적 수송량을 결정하는 문제를 선혱계획모형으로 정식화하고 Python을 이용하여 최적 수송량을 구하라.</p>
+<table>
+  <caption><b>Table 1. </b>P전자의 수송표</caption>
+  <tr>
+    <th width="70px">구분</th>
+    <th width="30px">1</th>
+    <th width="30px">2</th>
+    <th width="30px">3</th>
+    <th width="30px">4</th>
+    <th width="70px">공급량(개)</th>
+  </tr>
+  <tr>
+    <td align="center"><b>1</b></td>
+    <td align="center">4</td>
+    <td align="center">5</td>
+    <td align="center">6</td>
+    <td align="center">8</td>
+    <td align="center">120</td>
+  </tr>
+  <tr> 
+    <td align="center"><b>2</b></td>
+    <td align="center">4</td>
+    <td align="center">7</td>
+    <td align="center">9</td>
+    <td align="center">2</td>
+    <td align="center">150</td>
+  </tr>
+  <tr> 
+    <td align="center"><b>3</b></td>
+    <td align="center">5</td>
+    <td align="center">8</td>
+    <td align="center">7</td>
+    <td align="center">6</td>
+    <td align="center">200</td>
+  </tr>
+  <tr> 
+    <td align="center"><b>수요량(개)</b></td>
+    <td align="center">100</td>
+    <td align="center">60</td>
+    <td align="center">130</td>
+    <td align="center">180</td>
+    <td align="center"></td>
+  </tr>
+</table>
+<p style="text-indent: 1.5em">$X_{ij}=\text{공급지 $i$에서 수요지 $j$로의 수송량(개)}$</p><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="c1"># Add the parent directory for importing custom library</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="n">os</span><span class="o">.</span><span class="n">pardir</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="optimization-with-pulp">
+<h2>Optimization with PuLP<a class="headerlink" href="#optimization-with-pulp" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pulp</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">ortools.utils</span> <span class="kn">import</span> <span class="n">output</span>
+
+<span class="n">prob</span> <span class="o">=</span> <span class="n">LpProblem</span><span class="p">(</span><span class="s1">&#39;Transportation Problem&#39;</span><span class="p">,</span> <span class="n">LpMinimize</span><span class="p">)</span>
+
+<span class="n">x11</span> <span class="o">=</span> <span class="n">LpVariable</span><span class="p">(</span><span class="s1">&#39;X11&#39;</span><span class="p">,</span> <span class="n">lowBound</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">x12</span> <span class="o">=</span> <span class="n">LpVariable</span><span class="p">(</span><span class="s1">&#39;X12&#39;</span><span class="p">,</span> <span class="n">lowBound</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">x13</span> <span class="o">=</span> <span class="n">LpVariable</span><span class="p">(</span><span class="s1">&#39;X13&#39;</span><span class="p">,</span> <span class="n">lowBound</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">x14</span> <span class="o">=</span> <span class="n">LpVariable</span><span class="p">(</span><span class="s1">&#39;X14&#39;</span><span class="p">,</span> <span class="n">lowBound</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">x21</span> <span class="o">=</span> <span class="n">LpVariable</span><span class="p">(</span><span class="s1">&#39;X21&#39;</span><span class="p">,</span> <span class="n">lowBound</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">x22</span> <span class="o">=</span> <span class="n">LpVariable</span><span class="p">(</span><span class="s1">&#39;X22&#39;</span><span class="p">,</span> <span class="n">lowBound</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">x23</span> <span class="o">=</span> <span class="n">LpVariable</span><span class="p">(</span><span class="s1">&#39;X23&#39;</span><span class="p">,</span> <span class="n">lowBound</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">x24</span> <span class="o">=</span> <span class="n">LpVariable</span><span class="p">(</span><span class="s1">&#39;X24&#39;</span><span class="p">,</span> <span class="n">lowBound</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">x31</span> <span class="o">=</span> <span class="n">LpVariable</span><span class="p">(</span><span class="s1">&#39;X31&#39;</span><span class="p">,</span> <span class="n">lowBound</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">x32</span> <span class="o">=</span> <span class="n">LpVariable</span><span class="p">(</span><span class="s1">&#39;X32&#39;</span><span class="p">,</span> <span class="n">lowBound</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">x33</span> <span class="o">=</span> <span class="n">LpVariable</span><span class="p">(</span><span class="s1">&#39;X33&#39;</span><span class="p">,</span> <span class="n">lowBound</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">x34</span> <span class="o">=</span> <span class="n">LpVariable</span><span class="p">(</span><span class="s1">&#39;X34&#39;</span><span class="p">,</span> <span class="n">lowBound</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">prob</span> <span class="o">+=</span> <span class="mi">4</span><span class="o">*</span><span class="n">x11</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="n">x12</span> <span class="o">+</span> <span class="mi">6</span><span class="o">*</span><span class="n">x13</span> <span class="o">+</span> <span class="mi">8</span><span class="o">*</span><span class="n">x14</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">x21</span> <span class="o">+</span> <span class="mi">7</span><span class="o">*</span><span class="n">x22</span> <span class="o">+</span> <span class="mi">9</span><span class="o">*</span><span class="n">x23</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x24</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="n">x31</span> <span class="o">+</span> <span class="mi">8</span><span class="o">*</span><span class="n">x32</span> <span class="o">+</span> <span class="mi">7</span><span class="o">*</span><span class="n">x33</span> <span class="o">+</span> <span class="mi">6</span><span class="o">*</span><span class="n">x34</span>
+
+<span class="n">prob</span> <span class="o">+=</span> <span class="n">x11</span> <span class="o">+</span> <span class="n">x12</span> <span class="o">+</span> <span class="n">x13</span> <span class="o">+</span> <span class="n">x14</span> <span class="o">==</span> <span class="mi">120</span>
+<span class="n">prob</span> <span class="o">+=</span> <span class="n">x21</span> <span class="o">+</span> <span class="n">x22</span> <span class="o">+</span> <span class="n">x23</span> <span class="o">+</span> <span class="n">x24</span> <span class="o">==</span> <span class="mi">150</span>
+<span class="n">prob</span> <span class="o">+=</span> <span class="n">x31</span> <span class="o">+</span> <span class="n">x32</span> <span class="o">+</span> <span class="n">x33</span> <span class="o">+</span> <span class="n">x34</span> <span class="o">==</span> <span class="mi">200</span>
+
+<span class="n">prob</span> <span class="o">+=</span> <span class="n">x11</span> <span class="o">+</span> <span class="n">x21</span> <span class="o">+</span> <span class="n">x31</span> <span class="o">==</span> <span class="mi">100</span>
+<span class="n">prob</span> <span class="o">+=</span> <span class="n">x12</span> <span class="o">+</span> <span class="n">x22</span> <span class="o">+</span> <span class="n">x32</span> <span class="o">==</span> <span class="mi">60</span>
+<span class="n">prob</span> <span class="o">+=</span> <span class="n">x13</span> <span class="o">+</span> <span class="n">x23</span> <span class="o">+</span> <span class="n">x33</span> <span class="o">==</span> <span class="mi">130</span>
+<span class="n">prob</span> <span class="o">+=</span> <span class="n">x14</span> <span class="o">+</span> <span class="n">x24</span> <span class="o">+</span> <span class="n">x34</span> <span class="o">==</span> <span class="mi">180</span>
+
+<span class="c1"># Solving problem</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+<span class="n">output</span><span class="p">(</span><span class="n">prob</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Status: Optimal
+Objective value: 2130.0
+
+Variables      Values
+-----------  --------
+X11                60
+X12                60
+X13                 0
+X14                 0
+X21                 0
+X22                 0
+X23                 0
+X24               150
+X31                40
+X32                 0
+X33               130
+X34                30
+
+Statistics:
+- Number of variables: 12
+- Number of constraints: 7
+- Solve time: 0.004s
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pulp</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">ortools.utils</span> <span class="kn">import</span> <span class="n">output</span>
+
+<span class="n">prob</span> <span class="o">=</span> <span class="n">LpProblem</span><span class="p">(</span><span class="s1">&#39;Transportation Problem&#39;</span><span class="p">,</span> <span class="n">LpMinimize</span><span class="p">)</span>
+
+<span class="n">n_suppliers</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">n_buyers</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="n">costs</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> 
+    <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="n">supply</span> <span class="o">=</span> <span class="p">[</span><span class="mi">120</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">200</span><span class="p">]</span>
+<span class="n">demand</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">180</span><span class="p">]</span>
+
+<span class="n">routes</span> <span class="o">=</span> <span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_suppliers</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_buyers</span><span class="p">)]</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">LpVariable</span><span class="o">.</span><span class="n">dicts</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">routes</span><span class="p">,</span> <span class="n">lowBound</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">prob</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">costs</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_suppliers</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_buyers</span><span class="p">)])</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_suppliers</span><span class="p">):</span>
+    <span class="n">prob</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_buyers</span><span class="p">)])</span> <span class="o">==</span> <span class="n">supply</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_buyers</span><span class="p">):</span>
+    <span class="n">prob</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_suppliers</span><span class="p">)])</span> <span class="o">==</span> <span class="n">demand</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+    
+<span class="c1"># Solving problem</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+<span class="n">output</span><span class="p">(</span><span class="n">prob</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Status: Optimal
+Objective value: 2130.0
+
+Variables      Values
+-----------  --------
+X_(0,_0)           60
+X_(0,_1)           60
+X_(0,_2)            0
+X_(0,_3)            0
+X_(1,_0)            0
+X_(1,_1)            0
+X_(1,_2)            0
+X_(1,_3)          150
+X_(2,_0)           40
+X_(2,_1)            0
+X_(2,_2)          130
+X_(2,_3)           30
+
+Statistics:
+- Number of variables: 12
+- Number of constraints: 7
+- Solve time: 0.006s
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="optimization-with-gurobi">
+<h2>Optimization with GUROBI<a class="headerlink" href="#optimization-with-gurobi" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">gurobipy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">ortools.utils</span> <span class="kn">import</span> <span class="n">set_gurobi</span><span class="p">,</span> <span class="n">custom_callback</span><span class="p">,</span> <span class="n">output</span>
+
+<span class="n">n_suppliers</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">n_buyers</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="n">costs</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> 
+    <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="n">supply</span> <span class="o">=</span> <span class="p">[</span><span class="mi">120</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">200</span><span class="p">]</span>
+<span class="n">demand</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">180</span><span class="p">]</span>
+
+<span class="n">routes</span> <span class="o">=</span> <span class="n">tuplelist</span><span class="p">([(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_suppliers</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_buyers</span><span class="p">)])</span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="s1">&#39;Transportation&#39;</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">addVars</span><span class="p">(</span><span class="n">routes</span><span class="p">,</span> <span class="n">lb</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vtype</span><span class="o">=</span><span class="n">GRB</span><span class="o">.</span><span class="n">CONTINUOUS</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
+
+<span class="n">m</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+
+<span class="n">m</span><span class="o">.</span><span class="n">setObjective</span><span class="p">(</span><span class="n">quicksum</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">costs</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_suppliers</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_buyers</span><span class="p">)),</span> <span class="n">GRB</span><span class="o">.</span><span class="n">MINIMIZE</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_suppliers</span><span class="p">):</span>
+    <span class="n">m</span><span class="o">.</span><span class="n">addConstr</span><span class="p">(</span><span class="n">quicksum</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_buyers</span><span class="p">))</span> <span class="o">==</span> <span class="n">supply</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_buyers</span><span class="p">):</span>
+    <span class="n">m</span><span class="o">.</span><span class="n">addConstr</span><span class="p">(</span><span class="n">quicksum</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_suppliers</span><span class="p">))</span> <span class="o">==</span> <span class="n">demand</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+
+<span class="n">set_gurobi</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Optimize model</span>
+<span class="n">m</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="n">custom_callback</span><span class="p">)</span>
+<span class="n">output</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Status: Optimal
+Objective value: 2130.0
+
+Variables      Values
+-----------  --------
+X[0,0]              0
+X[0,1]             60
+X[0,2]             60
+X[0,3]              0
+X[1,0]              0
+X[1,1]              0
+X[1,2]              0
+X[1,3]            150
+X[2,0]            100
+X[2,1]              0
+X[2,2]             70
+X[2,3]             30
+
+Statistics:
+- Number of variables: 12
+- Number of constraints: 7
+- Solve time: 0.001s
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="unbalanced-transportation-problem">
+<h2>Unbalanced Transportation Problem<a class="headerlink" href="#unbalanced-transportation-problem" title="Permalink to this headline">¶</a></h2>
+<p><strong>이강우 &amp; 김정자. (2012). <em>EXCEL 2010 경영과학</em>. 한경사, 306.</strong></p>
+<p style="text-indent: 1.5em">현실의 수송문제는 총 공급량과 총 수요량이 일치하는 경우는 거의 없으며 이들이 서로 일치하지 않는 공급과잉이나 수요과잉이 발생하는 것이 일반적인 현상이다. 이와 같이 총 공급량과 총 수요량이 서로 일치하지 않는 수송문제를 불균형 수송문제라고 한다.</p>
+</div>
+<div class="section" id="id1">
+<h2>Optimization with PuLP<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pulp</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">prob</span> <span class="o">=</span> <span class="n">LpProblem</span><span class="p">(</span><span class="s1">&#39;Unbalaced Transportation Problem&#39;</span><span class="p">,</span> <span class="n">LpMinimize</span><span class="p">)</span>
+
+<span class="n">n_suppliers</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">n_buyers</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="n">costs</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> 
+    <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="n">supply</span> <span class="o">=</span> <span class="p">[</span><span class="mi">120</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">200</span><span class="p">]</span>
+<span class="n">demand</span> <span class="o">=</span> <span class="p">[</span><span class="mi">150</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">180</span><span class="p">]</span>
+
+<span class="n">routes</span> <span class="o">=</span> <span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_suppliers</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_buyers</span><span class="p">)]</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">LpVariable</span><span class="o">.</span><span class="n">dicts</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">routes</span><span class="p">,</span> <span class="n">lowBound</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">prob</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">costs</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_suppliers</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_buyers</span><span class="p">)])</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_suppliers</span><span class="p">):</span>
+    <span class="n">prob</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_buyers</span><span class="p">)])</span> <span class="o">==</span> <span class="n">supply</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_buyers</span><span class="p">):</span>
+    <span class="n">prob</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_suppliers</span><span class="p">)])</span> <span class="o">&lt;=</span> <span class="n">demand</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+    
+<span class="c1"># Solving problem</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+<span class="n">output</span><span class="p">(</span><span class="n">prob</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Status: Optimal
+Objective value: 2030.0
+
+Variables      Values
+-----------  --------
+X_(0,_0)            0
+X_(0,_1)           60
+X_(0,_2)           60
+X_(0,_3)            0
+X_(1,_0)            0
+X_(1,_1)            0
+X_(1,_2)            0
+X_(1,_3)          150
+X_(2,_0)          150
+X_(2,_1)            0
+X_(2,_2)           20
+X_(2,_3)           30
+
+Statistics:
+- Number of variables: 12
+- Number of constraints: 7
+- Solve time: 0.007s
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">gurobipy</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">n_suppliers</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">n_buyers</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="n">costs</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> 
+    <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="n">supply</span> <span class="o">=</span> <span class="p">[</span><span class="mi">120</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">200</span><span class="p">]</span>
+<span class="n">demand</span> <span class="o">=</span> <span class="p">[</span><span class="mi">150</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">180</span><span class="p">]</span>
+
+<span class="n">routes</span> <span class="o">=</span> <span class="n">tuplelist</span><span class="p">([(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_suppliers</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_buyers</span><span class="p">)])</span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="s1">&#39;Unbalaced Transportation Problem&#39;</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">addVars</span><span class="p">(</span><span class="n">routes</span><span class="p">,</span> <span class="n">lb</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vtype</span><span class="o">=</span><span class="n">GRB</span><span class="o">.</span><span class="n">CONTINUOUS</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
+
+<span class="n">m</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+
+<span class="n">m</span><span class="o">.</span><span class="n">setObjective</span><span class="p">(</span><span class="n">quicksum</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">costs</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_suppliers</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_buyers</span><span class="p">)),</span> <span class="n">GRB</span><span class="o">.</span><span class="n">MINIMIZE</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_suppliers</span><span class="p">):</span>
+    <span class="n">m</span><span class="o">.</span><span class="n">addConstr</span><span class="p">(</span><span class="n">quicksum</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_buyers</span><span class="p">))</span> <span class="o">==</span> <span class="n">supply</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_buyers</span><span class="p">):</span>
+    <span class="n">m</span><span class="o">.</span><span class="n">addConstr</span><span class="p">(</span><span class="n">quicksum</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_suppliers</span><span class="p">))</span> <span class="o">&lt;=</span> <span class="n">demand</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+
+<span class="n">set_gurobi</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Optimize model</span>
+<span class="n">m</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="n">custom_callback</span><span class="p">)</span>
+<span class="n">output</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Status: Optimal
+Objective value: 2030.0
+
+Variables      Values
+-----------  --------
+X[0,0]              0
+X[0,1]             60
+X[0,2]             60
+X[0,3]              0
+X[1,0]              0
+X[1,1]              0
+X[1,2]              0
+X[1,3]            150
+X[2,0]            150
+X[2,1]              0
+X[2,2]             20
+X[2,3]             30
+
+Statistics:
+- Number of variables: 12
+- Number of constraints: 7
+- Solve time: 0.000s
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs/linear-programming"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="vehicle-routing.html" title="previous page">Vehicle Routing Problem</a>
+    <a class='right-next' id="next-link" href="unbalanced-transportation.html" title="next page">Unbalanced Transportation Problem</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

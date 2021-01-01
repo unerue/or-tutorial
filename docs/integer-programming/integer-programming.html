@@ -1,0 +1,911 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Knapsack Problem &#8212; Operations Research with Python</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Capital Budgeting Problem" href="capital-budgeting.html" />
+    <link rel="prev" title="Unbalanced Transportation Problem" href="../linear-programming/unbalanced-transportation.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Operations Research with Python</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Operations Research
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../linear-programming/linear-programming.html">
+   Linear Programming
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear-programming/product-mix.html">
+     Product Mix Problem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear-programming/production-planning.html">
+     Production Planning Problem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear-programming/sensitivity-analysis.html">
+     Sensitivity Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear-programming/workforce-scheduling.html">
+     Workforce Scheduling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear-programming/vehicle-routing.html">
+     Vehicle Routing Problem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear-programming/transportation.html">
+     Transportation Problem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linear-programming/unbalanced-transportation.html">
+     Unbalanced Transportation Problem
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="current reference internal" href="#">
+   Knapsack Problem
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="capital-budgeting.html">
+     Capital Budgeting Problem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="set-covering.html">
+     Set Covering Problem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="traveling-salesman.html">
+     Travelling Salesman Problem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="knapsack.html">
+     Knapsack Problem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plant.html">
+     Plant Location Problem
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/docs/integer-programming/integer-programming.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/integer-programming/integer-programming.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-6-4">
+   Example 6-4
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiple-knapsack-problem">
+   Multiple Knapsack Problem
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-6-5">
+     Example 6-5
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-bin-packing-problem">
+     Example: Bin Packing Problem
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-3">
+     Problem 3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Knapsack Problem
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#knapsack-problem-ii">
+     Knapsack Problem II
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="knapsack-problem">
+<h1>Knapsack Problem<a class="headerlink" href="#knapsack-problem" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="example-6-4">
+<h2>Example 6-4<a class="headerlink" href="#example-6-4" title="Permalink to this headline">¶</a></h2>
+<p><strong>이강우 &amp; 김정자. (2012). <em>EXCEL 2010 경영과학</em>. 한경사, 380.</strong></p>
+<p><strong>Table 6-1</strong>는 배낭에 넣어 갖고 갈 수 있는 3개의 상이한 품목에 대한 품목별 무게와 효용 및 배낭의 보관능력을 나타내고 있다. 배낭의 보관능력 제약을 만족하면서 배낭에 넣어 갖고 갈 수 있는 품목의 효용을 최대화하는 정수계획모형을 작성한 후 최적 정수해를 구하라. 단, 같은 품목을 중복으로 배낭에 넣을 수 없다.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>Item</p></th>
+<th class="text-align:center head"><p>Weight</p></th>
+<th class="text-align:center head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>3</p></td>
+<td class="text-align:center"><p>6</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>2</p></td>
+<td class="text-align:center"><p>4</p></td>
+<td class="text-align:center"><p>8</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>3</p></td>
+<td class="text-align:center"><p>2</p></td>
+<td class="text-align:center"><p>3</p></td>
+</tr>
+</tbody>
+</table>
+<p>단일품목 배낭문제를 0-1정수계획모형으로 정식화하기 위해서는 배낭에 넣을 수 있는 품목 <span class="math notranslate nohighlight">\(j\)</span>를 결정변수 <span class="math notranslate nohighlight">\(X_{j}\)</span>라고 정의하고 <span class="math notranslate nohighlight">\(X_{j}\)</span>가 0과 1 중에서 하나의 값만 갖도록 하여야 한다. 왜냐하면 배낭에 넣어 갖고 갈 수 있는 품목은 단일품목 배낭문제의 성격상 그 품목을 선택하거나 또는 선택하지 않기 때문이다. 따라서 <span class="math notranslate nohighlight">\(X_{j}\)</span>가 1의 값을 가질 때는 품목 <span class="math notranslate nohighlight">\(j\)</span>가 선택되고, 0의 값을 가질 때는 품목 <span class="math notranslate nohighlight">\(j\)</span>가 선택되지 않는다고 하자. 만일 각 품목에 대해 전체가 아닌 일부분의 선택이 가능하다면 이 문제는 분할성의 가정이 성립하므로 선형계획문제로 정식화할 수 있다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}X_{j} = \begin{cases}
+1, \text{ 배낭에 품목 $j$를 넣는 경우 $(j=1,2,3)$}\\
+0, \text{ 배낭에 품목 $j$를 넣지 않는 경우 $(j=1,2,3)$}\\
+\end{cases}\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pulp</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">prob</span> <span class="o">=</span> <span class="n">LpProblem</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;0-1 Knapsack Problem&#39;</span><span class="p">,</span> <span class="n">sense</span><span class="o">=</span><span class="n">LpMaximize</span><span class="p">)</span>
+
+<span class="n">x1</span> <span class="o">=</span> <span class="n">LpVariable</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;X1&#39;</span><span class="p">,</span> <span class="n">lowBound</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">cat</span><span class="o">=</span><span class="s1">&#39;Binary&#39;</span><span class="p">)</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">LpVariable</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;X2&#39;</span><span class="p">,</span> <span class="n">lowBound</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">cat</span><span class="o">=</span><span class="s1">&#39;Binary&#39;</span><span class="p">)</span>
+<span class="n">x3</span> <span class="o">=</span> <span class="n">LpVariable</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;X3&#39;</span><span class="p">,</span> <span class="n">lowBound</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">cat</span><span class="o">=</span><span class="s1">&#39;Binary&#39;</span><span class="p">)</span>
+
+<span class="n">prob</span> <span class="o">+=</span> <span class="mi">7</span><span class="o">*</span><span class="n">x1</span> <span class="o">+</span> <span class="mi">8</span><span class="o">*</span><span class="n">x2</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">x3</span>
+
+<span class="n">prob</span> <span class="o">+=</span> <span class="mi">3</span><span class="o">*</span><span class="n">x1</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">x2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x3</span> <span class="o">&lt;=</span> <span class="mi">6</span>
+
+<span class="c1"># Solving problem</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Status&#39;</span><span class="p">,</span> <span class="n">LpStatus</span><span class="p">[</span><span class="n">prob</span><span class="o">.</span><span class="n">status</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Z = </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">(</span><span class="n">prob</span><span class="o">.</span><span class="n">objective</span><span class="p">)))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">prob</span><span class="o">.</span><span class="n">variables</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> = </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">i</span><span class="o">.</span><span class="n">varValue</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Status Optimal
+Z = 11.0
+X1 = 0.0
+X2 = 1.0
+X3 = 1.0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="multiple-knapsack-problem">
+<h2>Multiple Knapsack Problem<a class="headerlink" href="#multiple-knapsack-problem" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="example-6-5">
+<h3>Example 6-5<a class="headerlink" href="#example-6-5" title="Permalink to this headline">¶</a></h3>
+<p><strong>이강우 &amp; 김정자. (2012). <em>EXCEL 2010 경영과학</em>. 한경사, 389.</strong></p>
+<p style="text-indent: 1.5em"><b>Table 6-3</b>는 트럭에 적재할 수 있는 3개의 상이한 품목에 대하여 이들 품목별 단위당 무게, 적재가능 수량, 단위당 수익 및 트럭의 적재능력을 나타내고 있다. 트럭의 적재능력의 제약을 만족하면서 트럭에 품목들을 적재하여 최대의 수익을 얻을려고 한다. 트럭의 수익을 최대로 하는 적재 품목의 수량을 결정하기 위한 정수계획 모형을 작성하고 최적해를 구하라. 단, 트럭에 적재하는 품목의 수량은 정수단위로 결정해야 한다.</p>
+<table>
+  <caption><b>Table 6-1. </b>단일품목 배낭문제의 자료</caption>
+  <tr>
+    <th>품목</th>
+    <th>단위당 무게(kg)</th>
+    <th>적재가능수량(개)</th>
+    <th>단위당 수익(천원)</th>
+    <th>적재능력(kg)</th>
+  </tr>
+  <tr>
+    <td align="center"><b>1</b></td>
+    <td align="center">30</td>
+    <td align="center">100</td>
+    <td align="center">70</td>
+    <td align="center" rowspan="0">6</td>
+  </tr>
+  <tr>
+    <td align="center"><b>2</b></td>
+    <td align="center">40</td>
+    <td align="center">200</td>
+    <td align="center">80</td>
+  </tr>
+  <tr>
+    <td align="center"><b>3</b></td>
+    <td align="center">20</td>
+    <td align="center">300</td>
+    <td align="center">30</td>
+  </tr>
+</table><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pulp</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">prob</span> <span class="o">=</span> <span class="n">LpProblem</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Knapsack Problem&#39;</span><span class="p">,</span> <span class="n">sense</span><span class="o">=</span><span class="n">LpMaximize</span><span class="p">)</span>
+
+<span class="n">x1</span> <span class="o">=</span> <span class="n">LpVariable</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="n">lowBound</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">cat</span><span class="o">=</span><span class="s1">&#39;Integer&#39;</span><span class="p">)</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">LpVariable</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;x2&#39;</span><span class="p">,</span> <span class="n">lowBound</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">cat</span><span class="o">=</span><span class="s1">&#39;Integer&#39;</span><span class="p">)</span>
+<span class="n">x3</span> <span class="o">=</span> <span class="n">LpVariable</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;x3&#39;</span><span class="p">,</span> <span class="n">lowBound</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">cat</span><span class="o">=</span><span class="s1">&#39;Integer&#39;</span><span class="p">)</span>
+
+<span class="n">prob</span> <span class="o">+=</span> <span class="mi">70</span><span class="o">*</span><span class="n">x1</span> <span class="o">+</span> <span class="mi">80</span><span class="o">*</span><span class="n">x2</span> <span class="o">+</span> <span class="mi">30</span><span class="o">*</span><span class="n">x3</span>
+
+<span class="n">prob</span> <span class="o">+=</span> <span class="mi">30</span><span class="o">*</span><span class="n">x1</span> <span class="o">+</span> <span class="mi">40</span><span class="o">*</span><span class="n">x2</span> <span class="o">+</span> <span class="mi">20</span><span class="o">*</span><span class="n">x3</span> <span class="o">&lt;=</span> <span class="mi">10000</span>
+<span class="n">prob</span> <span class="o">+=</span> <span class="n">x1</span> <span class="o">&lt;=</span> <span class="mi">100</span>
+<span class="n">prob</span> <span class="o">+=</span> <span class="n">x2</span> <span class="o">&lt;=</span> <span class="mi">200</span>
+<span class="n">prob</span> <span class="o">+=</span> <span class="n">x3</span> <span class="o">&lt;=</span> <span class="mi">300</span>
+
+<span class="c1"># Solving problem</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Status&#39;</span><span class="p">,</span> <span class="n">LpStatus</span><span class="p">[</span><span class="n">prob</span><span class="o">.</span><span class="n">status</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Z = </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">(</span><span class="n">prob</span><span class="o">.</span><span class="n">objective</span><span class="p">)))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">prob</span><span class="o">.</span><span class="n">variables</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> = </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">i</span><span class="o">.</span><span class="n">varValue</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Status Optimal
+Z = 21000.0
+x1 = 100.0
+x2 = 175.0
+x3 = 0.0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="example-bin-packing-problem">
+<h3>Example: Bin Packing Problem<a class="headerlink" href="#example-bin-packing-problem" title="Permalink to this headline">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{split}
+  &amp; \text{minimize }   &amp;Z=&amp;\sum_{i=1}^{n}y_{i}                   &amp;                            &amp;\\[1ex]
+  &amp; \text{subject to } &amp;  &amp;\sum_{j=1}^{n}w_{j}x_{ij} \le cy_{i},\quad &amp;i \in N = \{1,...,n\},&amp;\\[1ex]
+  &amp;                    &amp;  &amp;\sum_{i=1}^{n}x_{ij} = 1,             &amp;j \in N,&amp;\\[1ex]  
+  &amp;                    &amp;  &amp;y_{i} = 0 or 1,                       &amp;i \in N,&amp;\\[1ex] 
+  &amp;                    &amp;  &amp;x_{ij} = 0 or 1                       &amp;i \in N, j \in N,&amp;\\[1ex] 
+\end{split}\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pulp</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="c1">#</span>
+<span class="c1"># A list of item tuples (name, weight) -- name is meaningless except to humans.</span>
+<span class="c1"># Weight and Size are used interchangeably here and elsewhere.</span>
+<span class="c1">#</span>
+<span class="n">items</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+         <span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span>
+         <span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span>
+         <span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="mi">32</span><span class="p">),</span>
+         <span class="p">(</span><span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+         <span class="p">(</span><span class="s2">&quot;f&quot;</span><span class="p">,</span> <span class="mi">32</span><span class="p">),</span>
+         <span class="p">(</span><span class="s2">&quot;g&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+         <span class="p">(</span><span class="s2">&quot;h&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span>
+         <span class="p">(</span><span class="s2">&quot;i&quot;</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span>
+         <span class="p">(</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span>
+         <span class="p">(</span><span class="s2">&quot;l&quot;</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span>
+         <span class="p">(</span><span class="s2">&quot;m&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+         <span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]</span>
+
+<span class="n">itemCount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
+
+<span class="c1"># Max number of bins allowed.</span>
+<span class="n">maxBins</span> <span class="o">=</span> <span class="mi">32</span>
+
+<span class="c1"># Bin Size</span>
+<span class="n">binCapacity</span> <span class="o">=</span> <span class="mi">32</span>
+
+
+
+<span class="c1"># Indicator variable assigned 1 when the bin is used.</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">pulp</span><span class="o">.</span><span class="n">LpVariable</span><span class="o">.</span><span class="n">dicts</span><span class="p">(</span><span class="s1">&#39;BinUsed&#39;</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="n">maxBins</span><span class="p">),</span>
+                            <span class="n">lowBound</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+                            <span class="n">upBound</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+                            <span class="n">cat</span> <span class="o">=</span> <span class="n">pulp</span><span class="o">.</span><span class="n">LpInteger</span><span class="p">)</span>
+
+<span class="c1"># An indicator variable that is assigned 1 when item is placed into binNum</span>
+<span class="n">possible_ItemInBin</span> <span class="o">=</span> <span class="p">[(</span><span class="n">itemTuple</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">binNum</span><span class="p">)</span> <span class="k">for</span> <span class="n">itemTuple</span> <span class="ow">in</span> <span class="n">items</span>
+                                            <span class="k">for</span> <span class="n">binNum</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">maxBins</span><span class="p">)]</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">pulp</span><span class="o">.</span><span class="n">LpVariable</span><span class="o">.</span><span class="n">dicts</span><span class="p">(</span><span class="s1">&#39;itemInBin&#39;</span><span class="p">,</span> <span class="n">possible_ItemInBin</span><span class="p">,</span>
+                            <span class="n">lowBound</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+                            <span class="n">upBound</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+                            <span class="n">cat</span> <span class="o">=</span> <span class="n">pulp</span><span class="o">.</span><span class="n">LpInteger</span><span class="p">)</span>
+
+<span class="c1"># Initialize the problem</span>
+<span class="n">prob</span> <span class="o">=</span> <span class="n">LpProblem</span><span class="p">(</span><span class="s2">&quot;Bin Packing Problem&quot;</span><span class="p">,</span> <span class="n">LpMinimize</span><span class="p">)</span>
+
+<span class="c1"># Add the objective function.</span>
+<span class="n">prob</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">maxBins</span><span class="p">)]),</span> <span class="s2">&quot;Objective: Minimize Bins Used&quot;</span>
+
+<span class="c1">#</span>
+<span class="c1"># This is the constraints section.</span>
+<span class="c1">#</span>
+
+<span class="c1"># First constraint: For every item, the sum of bins in which it appears must be 1</span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+    <span class="n">prob</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">x</span><span class="p">[(</span><span class="n">j</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">i</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">maxBins</span><span class="p">)])</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;An item can be in only 1 bin -- &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">j</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="c1"># Second constraint: For every bin, the number of items in the bin cannot exceed the bin capacity</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">maxBins</span><span class="p">):</span>
+    <span class="n">prob</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span><span class="p">[(</span><span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">i</span><span class="p">)]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">itemCount</span><span class="p">)])</span> <span class="o">&lt;=</span> <span class="n">binCapacity</span><span class="o">*</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="p">(</span><span class="s2">&quot;The sum of item sizes must be smaller than the bin -- &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+
+<span class="c1"># Write the model to disk</span>
+
+<span class="c1"># Solve the optimization.</span>
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Solved in </span><span class="si">%s</span><span class="s2"> seconds.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">))</span>
+
+
+<span class="c1"># Bins used</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bins used: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">sum</span><span class="p">(([</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">maxBins</span><span class="p">)]))))</span>
+
+<span class="c1"># The rest of this is some unpleasent massaging to get pretty results.</span>
+<span class="n">bins</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">itemBinPair</span> <span class="ow">in</span> <span class="n">x</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">itemBinPair</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">itemNum</span> <span class="o">=</span> <span class="n">itemBinPair</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">binNum</span> <span class="o">=</span> <span class="n">itemBinPair</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">binNum</span> <span class="ow">in</span> <span class="n">bins</span><span class="p">:</span>
+            <span class="n">bins</span><span class="p">[</span><span class="n">binNum</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">itemNum</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">bins</span><span class="p">[</span><span class="n">binNum</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">itemNum</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">bins</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">bins</span><span class="p">[</span><span class="n">b</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Solved in 0.05406332015991211 seconds.
+Bins used: 5.0
+0: [&#39;a&#39;, &#39;b&#39;, &#39;e&#39;, &#39;i&#39;, &#39;m&#39;, &#39;n&#39;]
+1: [&#39;c&#39;, &#39;g&#39;, &#39;h&#39;, &#39;l&#39;]
+12: [&#39;d&#39;]
+13: [&#39;f&#39;]
+7: [&#39;k&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="problem-3">
+<h3>Problem 3<a class="headerlink" href="#problem-3" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pulp</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prob</span> <span class="o">=</span> <span class="n">LpProblem</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Profit maximising problem&#39;</span><span class="p">,</span> <span class="n">sense</span><span class="o">=</span><span class="n">LpMaximize</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">=</span> <span class="n">LpVariable</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="n">lowBound</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">cat</span><span class="o">=</span><span class="s1">&#39;Integer&#39;</span><span class="p">)</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">LpVariable</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;x2&#39;</span><span class="p">,</span> <span class="n">lowBound</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">cat</span><span class="o">=</span><span class="s1">&#39;Integer&#39;</span><span class="p">)</span>
+
+<span class="n">prob</span> <span class="o">+=</span> <span class="mi">30000</span><span class="o">*</span><span class="n">x1</span> <span class="o">+</span> <span class="mi">45000</span><span class="o">*</span><span class="n">x2</span><span class="p">,</span> <span class="s1">&#39;Profit&#39;</span>
+
+<span class="n">prob</span> <span class="o">+=</span> <span class="mi">3</span><span class="o">*</span><span class="n">x1</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">x2</span> <span class="o">&lt;=</span> <span class="mi">30</span>
+<span class="n">prob</span> <span class="o">+=</span> <span class="mi">5</span><span class="o">*</span><span class="n">x1</span> <span class="o">+</span> <span class="mi">6</span><span class="o">*</span><span class="n">x2</span> <span class="o">&lt;=</span> <span class="mi">60</span>
+<span class="n">prob</span> <span class="o">+=</span> <span class="mf">1.5</span><span class="o">*</span><span class="n">x1</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">x2</span> <span class="o">&lt;=</span> <span class="mi">21</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prob</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="n">GUROBI</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">LpStatus</span><span class="p">[</span><span class="n">prob</span><span class="o">.</span><span class="n">status</span><span class="p">])</span>
+
+<span class="c1"># Print our decision variable values</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Production of Car x1 = </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x1</span><span class="o">.</span><span class="n">varValue</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Production of Car x2 = </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x2</span><span class="o">.</span><span class="n">varValue</span><span class="p">))</span>
+
+<span class="c1"># Print our objective function value</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">(</span><span class="n">prob</span><span class="o">.</span><span class="n">objective</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>Knapsack Problem<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pulp</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">LpProblem</span><span class="p">(</span><span class="s1">&#39;knapsack problem&#39;</span><span class="p">,</span> <span class="n">LpMaximize</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">=</span> <span class="n">LpVariable</span><span class="p">(</span><span class="s1">&#39;x1&#39;</span><span class="p">,</span> <span class="n">lowBound</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">upBound</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cat</span><span class="o">=</span><span class="n">LpInteger</span><span class="p">)</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">LpVariable</span><span class="p">(</span><span class="s1">&#39;x2&#39;</span><span class="p">,</span> <span class="n">lowBound</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">upBound</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cat</span><span class="o">=</span><span class="n">LpInteger</span><span class="p">)</span>
+<span class="n">x3</span> <span class="o">=</span> <span class="n">LpVariable</span><span class="p">(</span><span class="s1">&#39;x3&#39;</span><span class="p">,</span> <span class="n">lowBound</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">upBound</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cat</span><span class="o">=</span><span class="n">LpInteger</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">+=</span> <span class="mi">7</span><span class="o">*</span><span class="n">x1</span> <span class="o">+</span> <span class="mi">8</span><span class="o">*</span><span class="n">x2</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">x3</span>
+<span class="n">model</span> <span class="o">+=</span> <span class="mi">3</span><span class="o">*</span><span class="n">x1</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">x2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x3</span> <span class="o">&lt;=</span> <span class="mi">6</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">GUROBI</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Status&#39;</span><span class="p">,</span> <span class="n">LpStatus</span><span class="p">[</span><span class="n">model</span><span class="o">.</span><span class="n">status</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">objective</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">variables</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">varValue</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="knapsack-problem-ii">
+<h3>Knapsack Problem II<a class="headerlink" href="#knapsack-problem-ii" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pulp</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">]</span>
+<span class="n">weights</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prob</span> <span class="o">=</span> <span class="n">LpProblem</span><span class="p">(</span><span class="s1">&#39;knapsack problem&#39;</span><span class="p">,</span> <span class="n">LpMaximize</span><span class="p">)</span>
+
+<span class="c1"># Define decision variables</span>
+<span class="n">decision_variables</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">num</span><span class="p">,</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">items</span><span class="p">):</span>
+    <span class="n">var_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="s1">&#39;x&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">num</span><span class="p">))</span>
+    <span class="n">variables</span> <span class="o">=</span> <span class="n">LpVariable</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">var_str</span><span class="p">),</span> <span class="n">lowBound</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">upBound</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cat</span><span class="o">=</span><span class="s1">&#39;Integer&#39;</span><span class="p">)</span>
+    <span class="n">decision_variables</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">variables</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">decision_variables</span><span class="p">)</span>
+
+<span class="c1"># Define objective function</span>
+<span class="n">objective_function</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">uf</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">d</span><span class="p">,</span> <span class="n">dv</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">decision_variables</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">u</span> <span class="o">==</span> <span class="n">d</span><span class="p">:</span>
+            <span class="n">objective_function</span> <span class="o">+=</span> <span class="n">uf</span> <span class="o">*</span> <span class="n">dv</span>
+        
+<span class="n">prob</span> <span class="o">+=</span> <span class="n">objective_function</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">objective_function</span><span class="p">)</span>
+
+<span class="c1"># Define constraint</span>
+<span class="n">capacity</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">constraint</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="k">for</span> <span class="n">w</span><span class="p">,</span> <span class="n">wt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">weights</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">d</span><span class="p">,</span> <span class="n">dv</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">decision_variables</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">w</span> <span class="o">==</span> <span class="n">d</span><span class="p">:</span>
+            <span class="n">constraint</span> <span class="o">+=</span> <span class="n">wt</span> <span class="o">*</span> <span class="n">dv</span>
+            
+<span class="n">prob</span> <span class="o">+=</span> <span class="n">constraint</span> <span class="o">&lt;=</span> <span class="n">capacity</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">constraint</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prob</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">GUROBI</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Status&#39;</span><span class="p">,</span> <span class="n">LpStatus</span><span class="p">[</span><span class="n">prob</span><span class="o">.</span><span class="n">status</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">(</span><span class="n">prob</span><span class="o">.</span><span class="n">objective</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">prob</span><span class="o">.</span><span class="n">variables</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">varValue</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pulp</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">(</span><span class="s2">&quot;SMITH&quot;</span><span class="p">):</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">20</span><span class="p">],</span> <span class="p">(</span><span class="s2">&quot;JOHNSON&quot;</span><span class="p">):</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">24</span><span class="p">],</span> 
+    <span class="p">(</span><span class="s1">&#39;WILLIAMS&#39;</span><span class="p">):</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">24</span><span class="p">],</span> <span class="p">(</span><span class="s1">&#39;JONES&#39;</span><span class="p">):</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">24</span><span class="p">],</span> 
+    <span class="p">(</span><span class="s1">&#39;BROWN&#39;</span><span class="p">):</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">24</span><span class="p">],</span> <span class="p">(</span><span class="s1">&#39;DAVIS&#39;</span><span class="p">):</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">24</span><span class="p">],</span>
+    <span class="p">(</span><span class="s1">&#39;MILLER&#39;</span><span class="p">):</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">18</span><span class="p">],</span> <span class="p">(</span><span class="s1">&#39;WILSON&#39;</span><span class="p">):</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">24</span><span class="p">],</span> 
+    <span class="p">(</span><span class="s1">&#39;MOORE&#39;</span><span class="p">):</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">35</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">24</span><span class="p">],</span> <span class="p">(</span><span class="s1">&#39;TAYLOR&#39;</span><span class="p">):</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">24</span><span class="p">],</span> 
+    <span class="p">(</span><span class="s1">&#39;ANDERSON&#39;</span><span class="p">):</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span> <span class="p">(</span><span class="s1">&#39;THOMAS&#39;</span><span class="p">):</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">24</span><span class="p">],</span>
+    <span class="p">(</span><span class="s1">&#39;JACKSON&#39;</span><span class="p">)</span> <span class="p">:[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">16</span><span class="p">],</span> <span class="p">(</span><span class="s1">&#39;WHITE&#39;</span><span class="p">):</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">55</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">24</span><span class="p">],</span> 
+    <span class="p">(</span><span class="s1">&#39;HARRIS&#39;</span><span class="p">):</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">24</span><span class="p">],</span> <span class="p">(</span><span class="s1">&#39;MARTIN&#39;</span><span class="p">):</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">24</span><span class="p">],</span> 
+    <span class="p">(</span><span class="s1">&#39;THOMPSON&#39;</span><span class="p">):</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">24</span><span class="p">],</span> <span class="p">(</span><span class="s1">&#39;GARCIA&#39;</span><span class="p">):</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">24</span><span class="p">],</span>
+    <span class="p">(</span><span class="s1">&#39;MARTINEZ&#39;</span><span class="p">):</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">24</span><span class="p">],</span> <span class="p">(</span><span class="s1">&#39;ROBINSON&#39;</span><span class="p">):</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">24</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">required</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="n">time</span> <span class="o">=</span> <span class="mi">24</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">employee</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="n">mins</span><span class="p">,</span> <span class="n">maxs</span><span class="p">,</span> <span class="n">costs</span><span class="p">,</span> <span class="n">avs</span><span class="p">,</span> <span class="n">ave</span> <span class="o">=</span> <span class="n">splitDict</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">employee</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">time</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">time</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">x</span><span class="p">[</span><span class="n">d</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">LpVariable</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;x_</span><span class="si">%s%d%d</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">),</span> <span class="n">cat</span><span class="o">=</span><span class="s1">&#39;Binary&#39;</span><span class="p">)</span>
+            
+<span class="n">staff_number</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">time</span><span class="p">):</span>
+    <span class="n">staff_number</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="n">LpVariable</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;staffNumber_</span><span class="si">%d</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">t</span>, cat=&#39;Integer&#39;, lowBound=required[t])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prob</span> <span class="o">=</span> <span class="n">LpProblem</span><span class="p">(</span><span class="s1">&#39;Work Schedule&#39;</span><span class="p">,</span> <span class="n">LpMinimize</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prob</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">(</span><span class="n">lpSum</span><span class="p">(</span><span class="n">lpSum</span><span class="p">((</span><span class="n">j</span><span class="o">-</span><span class="n">i</span><span class="p">)</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="n">d</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">costs</span><span class="p">[</span><span class="n">d</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">time</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> \
+                    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">time</span><span class="p">))</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">employee</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">employee</span><span class="p">:</span>
+    <span class="n">prob</span> <span class="o">+=</span> <span class="p">(</span><span class="n">lpSum</span><span class="p">(</span><span class="n">lpSum</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">d</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">ave</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="k">if</span> <span class="nb">min</span><span class="p">[</span><span class="n">d</span><span class="p">]</span> <span class="o">&lt;=</span> \
+                         <span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="n">i</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="nb">max</span><span class="p">[</span><span class="n">d</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">avs</span><span class="p">[</span><span class="n">d</span><span class="p">],</span><span class="n">ave</span><span class="p">[</span><span class="n">d</span><span class="p">]))</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span>
+    
+    <span class="n">prob</span> <span class="o">+=</span> <span class="p">(</span><span class="n">lpSum</span><span class="p">(</span><span class="n">lpSum</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">d</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">time</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">time</span><span class="p">))</span> <span class="o">&lt;=</span> \
+             <span class="n">lpSum</span><span class="p">(</span><span class="n">quicksum</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">d</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">ave</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="nb">min</span><span class="p">[</span><span class="n">d</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="n">i</span><span class="p">)</span> <span class="o">&lt;=</span> \
+                            <span class="nb">max</span><span class="p">[</span><span class="n">d</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">avs</span><span class="p">[</span><span class="n">d</span><span class="p">],</span><span class="n">ave</span><span class="p">[</span><span class="n">d</span><span class="p">])))</span>
+
+    
+    
+<span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">employee</span><span class="p">:</span>
+    <span class="n">m</span><span class="o">.</span><span class="n">addConstr</span><span class="p">(</span><span class="n">quicksum</span><span class="p">(</span><span class="n">quicksum</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">d</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">ave</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="k">if</span> <span class="nb">min</span><span class="p">[</span><span class="n">d</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="n">i</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="nb">max</span><span class="p">[</span><span class="n">d</span><span class="p">])</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">avs</span><span class="p">[</span><span class="n">d</span><span class="p">],</span><span class="n">ave</span><span class="p">[</span><span class="n">d</span><span class="p">]))</span><span class="o">&lt;=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">m</span><span class="o">.</span><span class="n">addConstr</span><span class="p">(</span><span class="n">quicksum</span><span class="p">(</span><span class="n">quicksum</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">d</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">t</span><span class="p">))</span><span class="o">&lt;=</span><span class="n">quicksum</span><span class="p">(</span><span class="n">quicksum</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">d</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">ave</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">min</span><span class="p">[</span><span class="n">d</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="n">i</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="nb">max</span><span class="p">[</span><span class="n">d</span><span class="p">])</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">avs</span><span class="p">[</span><span class="n">d</span><span class="p">],</span><span class="n">ave</span><span class="p">[</span><span class="n">d</span><span class="p">])))</span>
+    
+    
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="n">m</span><span class="o">.</span><span class="n">addConstr</span><span class="p">(</span><span class="n">quicksum</span><span class="p">(</span><span class="n">quicksum</span><span class="p">(</span><span class="n">quicksum</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">d</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="k">if</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">c</span> <span class="o">&lt;</span><span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">t</span><span class="p">))</span><span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">employee</span><span class="p">)</span><span class="o">==</span><span class="n">staffNumber</span><span class="p">[</span><span class="n">c</span><span class="p">])</span>
+<span class="n">D101</span><span class="o">=</span><span class="n">quicksum</span><span class="p">(</span><span class="n">quicksum</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;ANDERSON&#39;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span><span class="k">if</span> <span class="nb">min</span><span class="p">[</span><span class="s2">&quot;ANDERSON&quot;</span><span class="p">]</span><span class="o">&lt;=</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="n">i</span><span class="p">)</span><span class="o">&lt;=</span><span class="nb">max</span><span class="p">[</span><span class="s2">&quot;ANDERSON&quot;</span><span class="p">])</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">D102</span><span class="o">=</span><span class="n">quicksum</span><span class="p">(</span><span class="n">quicksum</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;ANDERSON&#39;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">21</span><span class="p">))</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">21</span><span class="p">))</span>
+<span class="n">m</span><span class="o">.</span><span class="n">addConstr</span><span class="p">(</span><span class="n">D101</span><span class="o">+</span><span class="n">D102</span><span class="o">&lt;=</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;F&quot;</span><span class="p">)</span>
+<span class="n">m</span><span class="o">.</span><span class="n">addConstr</span><span class="p">(</span><span class="n">quicksum</span><span class="p">(</span><span class="n">quicksum</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;ANDERSON&#39;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">t</span><span class="p">))</span><span class="o">&lt;=</span><span class="n">D101</span><span class="o">+</span><span class="n">D102</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pulp</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">identifiers</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">]</span>
+<span class="n">prices</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">identifiers</span><span class="p">,</span> <span class="p">[</span><span class="mf">100.0</span><span class="p">,</span> <span class="mf">99.0</span><span class="p">,</span> <span class="mf">100.5</span><span class="p">,</span> <span class="mf">101.5</span><span class="p">,</span> <span class="mf">200.0</span><span class="p">]))</span>
+
+<span class="n">prob</span> <span class="o">=</span> <span class="n">LpProblem</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Minimalist example&#39;</span><span class="p">,</span> <span class="n">sense</span><span class="o">=</span><span class="n">LpMaximize</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">LpVariable</span><span class="o">.</span><span class="n">dicts</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">indexs</span><span class="o">=</span><span class="n">identifiers</span><span class="p">,</span> <span class="n">lowBound</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> 
+                     <span class="n">upBound</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cat</span><span class="o">=</span><span class="s1">&#39;Integer&#39;</span><span class="p">)</span>
+
+<span class="n">prob</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">prices</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">identifiers</span><span class="p">])</span>
+
+<span class="n">prob</span> <span class="o">+=</span> <span class="n">lpSum</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">identifiers</span><span class="p">])</span> <span class="o">==</span> <span class="mi">2</span>
+
+<span class="n">prob</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="n">GUROBI</span><span class="p">())</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">prob</span><span class="o">.</span><span class="n">variables</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="n">i</span><span class="o">.</span><span class="n">varValue</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Status:&#39;</span><span class="p">,</span> <span class="n">LpStatus</span><span class="p">[</span><span class="n">prob</span><span class="o">.</span><span class="n">status</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">(</span><span class="n">prob</span><span class="o">.</span><span class="n">objective</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs/integer-programming"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="../linear-programming/unbalanced-transportation.html" title="previous page">Unbalanced Transportation Problem</a>
+    <a class='right-next' id="next-link" href="capital-budgeting.html" title="next page">Capital Budgeting Problem</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The Jupyter Book community<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>
